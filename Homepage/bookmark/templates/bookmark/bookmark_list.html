@@ -2,15 +2,17 @@
 {% block content %}
 <div id = "content"> 
 
+<a href="{% url 'bookmark:change'%}"><strong>북마크 change</strong></a>
     <h1>Bookmark list </h1> 
     <ul> 
         {% for bookmark in object_list%}
         <li> {{bookmark.url_category}} </li>
         
         <a href="{% url 'bookmark:detail' bookmark.id%}">{{bookmark.title}} {{bookmark.url}}</a>
+    </ul> 
 
+    </div>
         
-
-        {% endfor %}
+    {% endfor %}
 
 {% endblock %}

@@ -1,0 +1,44 @@
+{% block title %} Bookmark 생성 page {% endblock %}
+
+{% block content %}
+<div id= "content"> 
+    <h1>Bookmark Create/Update </h1>
+    <form action="." method="post"> 
+        {% csrf_token %}
+
+    {% if form.errors %}
+        {{form.errors}}
+
+    {% endif %}
+
+    {% comment %} {{form}} {% endcomment %}
+
+    <p>등록(수정)하고 싶은 bookmark </p> 
+
+    <fieldset class="aligned"> 
+        <div class="form-row"> 
+        {{form.title.label_tag}} {{form.title}}
+        </div> 
+
+    <div class="form-row"> 
+        {{form.url_category.label_tag}} {{form.url_category}}
+    </div> 
+
+    <div class="form-row"> 
+        {{form.url.label_tag}} {{form.url}}
+
+    </div> 
+
+    </fieldset> 
+
+    <div class="submit-row"> 
+        <input type="submit" value="등록">
+    </div> 
+
+</form>
+    
+
+
+
+
+{% endblock %}
