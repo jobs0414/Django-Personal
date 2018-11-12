@@ -1,12 +1,12 @@
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView 
 from django.views.generic.edit import CreateView
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm 
 from django.urls import reverse_lazy
 
 from django.contrib.auth.decorators import login_required
 
 class HomeView(TemplateView): 
-    template_name = "home.html"
+    template_name ="home.html"
 
 class UserCreateView(CreateView): 
     template_name = "registration/register.html"
