@@ -1,0 +1,31 @@
+
+
+{% block title %} 회원가입 페이지 {% endblock %}
+
+{% block content %}
+<div id="content"> 
+    <h1>회원가입 </h1>
+    <form action="." method="post"> 
+        {% csrf_token %}
+
+        {{ form.errors }}
+
+        <p> 회원 정보를 입력해주세요 </p> 
+
+        <div class="form-row"> 
+        {{form.username.label_tag}} {{form.username}}
+        </div> 
+
+        <div class="form-row"> 
+        {{ form.password1.label_tag }}  {{form.password1}}
+        </div> 
+
+        <div class="form-row"> 
+        {{form.password2.label_tag }}  {{form.password2}}
+
+        <div class="subit-row"> 
+            <input type="submit" value="Register"> 
+            </div> 
+
+        {% endblock content %}
+        
